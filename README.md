@@ -5,3 +5,7 @@ The aim of this project is to create basic, polished ReadMe's in a short time fr
 
 ## Screenshot
 ![Project Screenshot](./utils/ScreenShot.png)
+
+## Project
+Link to my repository: (https://github.com/SarahHn92/README-generator)
+Link to example README (https://github.com/SarahHn92/README-generator/blob/main/example.md)
