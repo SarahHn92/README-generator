@@ -8,4 +8,7 @@ The aim of this project is to create basic, polished ReadMe's in a short time fr
 
 ## Project
 Link to my repository: (https://github.com/SarahHn92/README-generator)
-Link to example README (https://github.com/SarahHn92/README-generator/blob/main/example.md)
+
+Link to example README: (https://github.com/SarahHn92/README-generator/blob/main/example.md)
+
+Link to walkthrough video: (https://drive.google.com/file/d/1a0lDhE3cnxga5RGfpuE-i-FWGxhqxcM3/view) 
