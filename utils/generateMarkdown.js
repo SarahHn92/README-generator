@@ -1,20 +1,21 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {
-  if (data.license !== "None") {
-    return `https://img.shields.io/badge/License-${data.license}-lightgreen`
-  } else "";
-}
+// function renderLicenseBadge(data) {
+//   if (data.license !== "None") {
+//     return `![](https://img.shields.io/badge/License-${data.license}-lightgreen)`
+//   } else return "";
+// } 
 
 
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {
-  if (data.license !== "None") {
-    // write link to License.txt file
-  } else "";
-}
+// function renderLicenseLink(data) {
+//   if (data.license !== "None") {
+//     // write link to License.txt file
+    
+//   } else "";
+// }
 
 
 var MIT = `The MIT license gives users express permission to reuse code for any purpose, 
@@ -36,16 +37,50 @@ long as you include the BSD copyright and license notice in it (found in Fulltex
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {
+// function renderLicenseSection(data) {
+//   if (data.license !== "None") {
+//     if ("MIT") {return MIT;} 
+//           else if ("APACHE 2.0") {return apache;} 
+//           else if ("GPL 3.0") {return GPL;}
+//           else if ("BSD 3") {return BSD;}
+//         }
   
-}
+//   else "There is no licensing information for this project."
+// }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
-  ## Table of Contents
-   [ - License](#license)
+  
+  var renderLicenseBadge = function(data) {
+    if (data.license !== "None") {
+      return `![](https://img.shields.io/badge/License-${encodeURI(data.license)}-lightgreen)`
+    } else return "";
+  }
 
+  var renderLicenseLink = function(data) {
+    if (data.license !== "None") {
+      //     // write link to License.txt file
+          
+        } else "";
+  }
+
+  var renderLicenseSection = function(data) {
+    switch (data.license) {
+      case "MIT" : return MIT;
+      case "APACHE 2.0" : return apache; 
+      case "GPL 3.0" : return GPL;
+      case "BSD 3" : return BSD;
+      default : return "There is no licensing information for this project."
+    }
+}
+
+
+  return `# ${data.title}
+
+  ${renderLicenseBadge(data)}
+
+  ## Table of Contents
+   
    [ - Description](#description)
  
    [ - Installation](#installation)
@@ -58,14 +93,10 @@ function generateMarkdown(data) {
    
    [ - Questions](#questions)
   
+   [ - License](#license)
+
  
-  ## License
-  ${renderLicenseBadge(data.license)}
-  ${renderLicenseLink(data.license)}
-  ${renderLicenseSection(data.license)}
-
-
-  ## Description
+   ## Description
   ${data.description}
   
   
@@ -87,8 +118,12 @@ function generateMarkdown(data) {
 
   ## Questions
   Feel free to contact me via email, ${data.email} if you have any questions regarding this project. 
-  Additionally, my GitHub profile is ${data.github} to view more projects.
+  Additionally, my GitHub profile is [${data.github}](https://github.com/${data.github}) to view more projects.
+
+  ## License
+  ${renderLicenseSection(data)}
 `;
 }
 
 module.exports = generateMarkdown;
+ 
